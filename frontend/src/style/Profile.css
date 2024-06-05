@@ -1,0 +1,19 @@
+.name{
+    visibility: hidden;
+}
+
+.profile-img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-top:-9px;
+    overflow: hidden;
+    margin-left: 180px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    line-height: 42px; 
+    font-size: 20px;
+    background-color: #f55c5c;
+} 

@@ -1,0 +1,21 @@
+package com.mwkfashion.mwk_fashion_backend.controller.offersseller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.mwkfashion.mwk_fashion_backend.model.offersSeller.DashBoardOffers;
+import com.mwkfashion.mwk_fashion_backend.services.offerSeller.OffersSellerServices;
+
+@RestController
+public class OffersSellerController {
+
+	@Autowired
+	private OffersSellerServices offersSellerServices;
+	
+	 public DashBoardOffers saveOfferImg(@RequestBody DashBoardOffers dashboardoffers) {
+		 DashBoardOffers savedOffers = offersSellerServices.saveOffersData(dashboardoffers);
+		 return savedOffers;
+	 }
+	
+}
