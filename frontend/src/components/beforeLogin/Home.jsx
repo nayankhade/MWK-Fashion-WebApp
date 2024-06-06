@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+import { Card, Container, Row, Col , Button} from 'react-bootstrap';
 import axios from 'axios';
+import style from "../../style/Home.css";
+
 
 export function Home() {
   const [offers, setOffers] = useState([]);
@@ -24,14 +26,17 @@ export function Home() {
 
   return (
     <div className='dashboard'>
-      <Container fluid>
+      <Container fluid className='offer-container'>
         <Row>
           {offers.map((offer, index) => {
             const imageUrl = `http://localhost:9191/dashboard/images/${offer.offers}`;
             return (
               <Col key={index} xs={12} sm={6} md={4} lg={3}>
                 <Card className="cards my-3">
-                  <Card.Img variant="top" src={imageUrl} alt={`Offer ${index}`} />
+                  <Card.Img className='offer-img' variant="top" src={imageUrl} alt={`Offer ${index}`} />
+                  <Card.Body>
+                    <Button variant="primary">View Offer</Button>
+                  </Card.Body>
                 </Card>
               </Col>
             );
