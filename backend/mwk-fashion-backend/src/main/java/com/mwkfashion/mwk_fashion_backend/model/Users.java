@@ -25,4 +25,6 @@ public class Users {
 	private String phoneNumber;
 	private String email;
 	private String password;
+	private String role;
+	private String address;
 }

@@ -1,0 +1,5 @@
+package com.mwkfashion.mwk_fashion_backend.dto;
+
+public class UsersDto {
+
+}

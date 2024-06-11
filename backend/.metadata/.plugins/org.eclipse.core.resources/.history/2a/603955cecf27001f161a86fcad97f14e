@@ -1,0 +1,18 @@
+package com.mwkfashion.mwk_fashion_backend.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.mwkfashion.mwk_fashion_backend.model.Users;
+import com.mwkfashion.mwk_fashion_backend.repository.UsersRepository;
+
+@Service
+public class UsersServicesImpl {
+	
+	@Autowired
+	private UsersRepository usersRepository;
+	
+	public Users signUp(Users user) {
+        return usersRepository.save(user);
+    }
+}

@@ -5,11 +5,13 @@ import img1 from "../../images/uil--bars.png";
 import img2 from "../../images/uil--times.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { useAuth } from '../../Js/AuthContext';
 
 export function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
   const navigate = useNavigate();
 
   const toggleNav = () => {
@@ -60,6 +62,11 @@ export function Navbar() {
 
   const handleLoginClick = () => {
     navigate('/signin');
+  };
+
+  const handleLogoutClick = () => {
+    logout();
+    navigate('/');
   };
 
   return (
@@ -115,9 +122,19 @@ export function Navbar() {
           <FontAwesomeIcon icon={faUser} className="profile-icon white-icon" onClick={showProfile} />
           {isProfileOpen && (
             <div className='signup-in' onMouseEnter={showProfile} onMouseLeave={hideProfile}>
-              <h4>Welcome</h4>
-              <p>To access account and manage orders</p>
-              <button className='btn' onClick={handleLoginClick}>LOGIN / SIGNIN</button>
+              {isAuthenticated ? (
+                <>
+                  <h4>Welcome</h4>
+                  <p>To access account and manage orders</p>
+                  <button className='btn' onClick={handleLogoutClick}>LOGOUT</button>
+                </>
+              ) : (
+                <>
+                  <h4>Welcome</h4>
+                  <p>To access account and manage orders</p>
+                  <button className='btn' onClick={handleLoginClick}>LOGIN / SIGNIN</button>
+                </>
+              )}
             </div>
           )}
         </div>
