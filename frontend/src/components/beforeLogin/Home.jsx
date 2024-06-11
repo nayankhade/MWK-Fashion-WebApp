@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Container, Row, Col , Button} from 'react-bootstrap';
 import axios from 'axios';
 import style from "../../style/Home.css";
+import { Navbar } from './Navbar';
 
 
 export function Home() {
@@ -25,6 +26,8 @@ export function Home() {
   };
 
   return (
+    <>        
+    <Navbar />
     <div className='dashboard'>
       <Container fluid className='offer-container'>
         <Row>
@@ -44,5 +47,7 @@ export function Home() {
         </Row>
       </Container>
     </div>
+    </>
+
   );
 }

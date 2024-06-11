@@ -1,0 +1,6 @@
+1717994257016	Rename package 'com.mwkfashion.mwk_fashion_backend.controller.offersseller'
+1717994274373	Rename package 'com.mwkfashion.mwk_fashion_backend.model.users'
+1717994318813	Move compilation unit
+1717994323734	Delete element
+1717994344485	Rename package 'com.mwkfashion.mwk_fashion_backend.repository.offersSeller'
+1717994356260	Rename package 'com.mwkfashion.mwk_fashion_backend.services.offerSeller'

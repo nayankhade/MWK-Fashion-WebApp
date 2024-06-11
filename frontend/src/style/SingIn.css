@@ -1,7 +1,9 @@
+/* Your existing CSS */
 body {
-    background-color: #ff7575; 
-    margin: 0; 
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow-x: hidden; 
 }
 
 .container {
@@ -13,61 +15,154 @@ body {
     margin: auto;
     padding-bottom: 20px;
     background-color: white;
-    margin-top: 100px;
+    margin-top: 160px;
     border-radius: 10px;
+    transition: transform 0.5s ease-out;
+    z-index: 2; /* Increase the z-index value */
+  }
+
+.container .title {
+  font-size: 28px;
+  color: #e44344;
+  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
-.container .title{
-    font-size: 28px;
-    color: #e44344;
+.container h4 {
+  margin-bottom: 20px;
+  margin-top: 15px;
 }
-
 
 .container input {
+  width: 85%;
+  height: 40px;
+  font-size: 15px;
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: white;
+  outline: none; 
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.container .btn {
+  width: 85%;
+  height: 40px;
+  background-color: #f55c5c;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.container .signin-btn {
+  margin-top: 20px;
+}
+
+.container .btn:hover {
+  background-color: #e44344;
+}
+
+.agreement {
+  padding-top: 20px;
+}
+
+.agreement span {
+  color: #e44344;
+  cursor: pointer;
+}
+
+.agreement span:hover {
+  color: #f55c5c;
+  text-decoration: underline;
+}
+
+
+
+.close-btn {
+    position: absolute; /* Changed to fixed */
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #f55c5c;
+    transition: color 0.3s;
+    z-index: 9999; /* Ensure the button appears on top */
+  }
+  
+  .close-btn:hover {
+    color: #e44344;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1560px) {
+    .container {
+      width: 50%;
+    }
+  }
+  
+  @media (max-width: 1360px) {
+    .container {
+      width: 55%;
+    }
+  }
+  
+  @media (max-width: 1160px) {
+    .container {
+      width: 60%;
+    }
+  }
+  
+  @media (max-width: 1050px) {
+    .container {
+      width: 65%;
+    }
+  }
+  
+  @media (max-width: 950px) {
+    .container {
+      width: 70%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+  .input-group-dd select {
     width: 85%;
     height: 40px;
     font-size: 15px;
     border: none;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
     background-color: white;
-    outline: none; 
-}
-
-.input-group {
-    margin-bottom: 10px;
-}
-
-.container button {
-    width: 85%;
-    height: 40px;
-    background-color: #f55c5c;
-    border: none;
-    color: white;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    outline: none;
+  }
+  
+  .input-group-dd select:focus {
+    outline: none;
+  }
+  
+  .input-group-dd select option {
+    padding: 10px;
     font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-bottom: 15px;
-    border-radius: 8px;
-}
-
-.container .signin-btn{
-    margin-top: 20px;
-}
-
-.container button:hover {
-    background-color: #e44344;
-}
-
-.aggrement{
-    padding-top: 20px;
-}
-
-.aggrement span{
-    color: #e44344;
-    cursor: pointer;
-}
-
-.aggrement span:hover{
-    color: #f55c5c;
-    text-decoration: underline;
-}
+  }
+  
