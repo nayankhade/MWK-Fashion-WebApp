@@ -25,31 +25,8 @@ export function Navbar() {
   };
 
   const handleSearchClick = () => {
-    const nav = document.querySelector(".nav");
-    const searchIcon = document.querySelector("#searchIcon");
-
-    nav.classList.toggle("openSearch");
-    nav.classList.remove("openNav");
-
-    if (nav.classList.contains("openSearch")) {
-      searchIcon.classList.replace("uil-search", "uil-times");
-    } else {
-      searchIcon.classList.replace("uil-times", "uil-search");
-    }
-  };
-
-  const handleNavOpenClick = () => {
-    const nav = document.querySelector(".nav");
-    const searchIcon = document.querySelector("#searchIcon");
-
-    nav.classList.add("openNav");
-    nav.classList.remove("openSearch");
-    searchIcon.classList.replace("uil-times", "uil-search");
-  };
-
-  const handleNavCloseClick = () => {
-    const nav = document.querySelector(".nav");
-    nav.classList.remove("openNav");
+    setIsSearchOpen(!isSearchOpen);
+    setIsNavOpen(false);
   };
 
   const showProfile = () => {
@@ -78,38 +55,106 @@ export function Navbar() {
         <ul className={`nav-links ${isNavOpen ? 'show' : ''}`}>
           <i className="uil uil-times navCloseBtn" onClick={toggleNav}><img src={img2} alt="" /></i>
           <li><a href="#">Offers</a></li>
-          <li className="navbar-dropdown">
+          <li className={`navbar-dropdown ${isSearchOpen ? 'hide' : ''}`}>
             <a href="#">MEN</a>
-            <div className="dropdown">
-              <a href="#">Tomato Soup</a>
-              <a href="#">Veg Manchow Soup</a>
-              <a href="#">Veg Hot Soup</a>
+            <div className={`dropdown ${isSearchOpen ? 'hide-dd' : ''}`}>
+              <table>
+                <tbody>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </li>
-          <li className="navbar-dropdown">
+
+          <li className={`navbar-dropdown ${isSearchOpen ? 'hide' : ''}`}>
             <a href="#">WOMEN</a>
-            <div className="dropdown">
-              <a href="#">Tomato Soup</a>
-              <a href="#">Veg Manchow Soup</a>
-              <a href="#">Veg Hot Soup</a>
+            <div className={`dropdown ${isSearchOpen ? 'hide-dd' : ''}`}>
+              <table>
+                <tbody>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </li>
-          <li className="navbar-dropdown">
+
+          <li className={`navbar-dropdown ${isSearchOpen ? 'hide' : ''}`}>
             <a href="#">KIDS</a>
-            <div className="dropdown">
-              <a href="#">Tomato Soup</a>
-              <a href="#">Veg Manchow Soup</a>
-              <a href="#">Veg Hot Soup</a>
+            <div className={`dropdown ${isSearchOpen ? 'hide-dd' : ''}`}>
+              <table>
+                <tbody>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </li>
-          <li className="navbar-dropdown">
+
+          <li className={`navbar-dropdown ${isSearchOpen ? 'hide' : ''}`}>
             <a href="#">BEAUTY</a>
-            <div className="dropdown">
-              <a href="#">Tomato Soup</a>
-              <a href="#">Veg Manchow Soup</a>
-              <a href="#">Veg Hot Soup</a>
+            <div className={`dropdown ${isSearchOpen ? 'hide' : ''}`}>
+              <table>
+                <tbody>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jeans</a></td>
+                    <td><a href="#">Shirts</a></td>
+                    <td><a href="#">Pants</a></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </li>
+
           <li><a href="#">ABOUT US</a></li>
         </ul>
 
