@@ -19,12 +19,11 @@ export function SignIn() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent form submission
-    try {
+    e.preventDefault();     try {
       const response = await axios.post('http://localhost:9191/login', loginData);
       console.log('Login successful:', response.data);
-      login(response.data); // Call login function from context
-      navigate('/'); // Redirect to profile page
+      login(response.data);
+      navigate('/'); 
     } catch (error) {
       console.error('Error logging in:', error);
     }
@@ -42,7 +41,7 @@ export function SignIn() {
     <>
       <Navbar />
       <div className="container" style={{ marginTop: '160px' }}>
-        <button className="close-btn" onClick={handleCloseClick}>×</button>
+        <button className="close-btn" onClick={handleCloseClick}>X</button>
         <h3 className="title">Sign In to view your profile</h3>
         <h4>Become a member — don’t miss out on deals, discounts.</h4>
         <form onSubmit={handleSubmit}>
