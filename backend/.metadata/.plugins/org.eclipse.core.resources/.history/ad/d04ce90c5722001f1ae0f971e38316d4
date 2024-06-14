@@ -1,9 +1,0 @@
-package com.mwkfashion.mwk_fashion_backend.services.offerSeller;
-
-public interface OffersSellerServices {
-
-	public void saveOffersData();
-
- 
-	
-}

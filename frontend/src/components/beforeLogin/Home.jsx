@@ -170,6 +170,8 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carous
 
 export function Home() {
   const [offers, setOffers] = useState([]);
+  const [showJsonButtonGroup, setShowJsonButtonGroup] = useState(false); // State for JSON button group visibility
+
 
   useEffect(() => {
     fetchOffers();
@@ -233,6 +235,13 @@ export function Home() {
     { id: 7, href: "/women/women-pants", src: "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/mobile_dR40w99.jpg?format=webp&w=768&dpr=2.0", alt: "Home Banner" },
     { id: 8, href: "/tags/women-bottomwear", src: "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/mobile_banner_copy_IeE1vaE.jpg?format=webp&w=768&dpr=2.0", alt: "Home Banner" }
   ];
+  
+  
+  const toggleJsonButtonGroup = () => {
+    setShowJsonButtonGroup(!showJsonButtonGroup);
+  };
+
+
 
   return (
     <>
@@ -292,8 +301,8 @@ export function Home() {
               <button id="resetButton">Reset</button>
             </div>
             <div className="json-button-group">
-              <button id="dropdownButton">Menu ▼</button>
-              <ul id="json-button-group">
+              <button id="dropdownButton" onClick={toggleJsonButtonGroup}>Menu ▼</button>
+              <ul id="json-button-group" className={showJsonButtonGroup ? 'show' : 'hide'}>
                 <li className="filter-btn" data-category="all">Item One</li>
                 <li className="filter-btn" data-category="rainbow">Item Two</li>
                 <li className="filter-btn" data-category="ocean">Item Three</li>

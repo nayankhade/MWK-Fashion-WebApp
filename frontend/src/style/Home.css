@@ -22,7 +22,7 @@
   justify-content: center;
 }
 
-.offer-cards{
+.offer-cards {
   margin-top: 90px;
 }
 
@@ -229,7 +229,7 @@
 .json-button-group {
   display: flex;
   align-items: center;
-  /* position: relative; */
+  position: relative;
 }
 
 #dropdownButton {
@@ -255,6 +255,14 @@
   background-color: var(--json-button-group-li-background-color);
   color: var(--json-button-group-li-color);
   cursor: pointer;
+}
+
+#json-button-group.hide {
+  display: none;
+}
+
+#json-button-group.hide li {
+  display: none;
 }
 
 #json-button-group.show {
@@ -318,17 +326,12 @@
     font-size: 14px;
   }
 
-  .json-search-container {
-    flex-direction: column;
-  }
-
   .json-search-container input {
     width: 100%;
   }
 
   .json-search-container button {
-    width: 100%;
-    margin-top: 5px;
+    width: 50%;
   }
 
   .json-button-group {
@@ -435,7 +438,6 @@
   }
 }
 
-
 .carousel {
   position: relative;
   width: 100%;
@@ -456,7 +458,6 @@
   background-color: #f0f0f0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .carousel .legend {
   background: rgba(0, 0, 0, 0.6);
