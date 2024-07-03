@@ -5,6 +5,7 @@ import { Home } from './components/beforeLogin/Home';
 import { SignIn } from './components/beforeLogin/SignIn';
 import { BizSignUp } from './components/biz/BizSignUp';
 import { AuthProvider } from './Js/AuthContext';
+import { Footer } from './components/beforeLogin/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           </Routes>
         </Router>
       </AuthProvider>
+      <Footer/>
     </div>
   );
 }

@@ -1,0 +1,161 @@
+/* Footer component styles */
+
+.footer-dark {
+  padding: 50px 0;
+  color: #f0f9ff;
+  background-color: #e44344;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1 1 calc(25% - 20px); 
+  box-sizing: border-box;
+  margin: 0 10px 30px 10px;
+}
+
+.query input, .query button {
+  display: flex;
+}
+
+.query .email, .query .textarea, .query button {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+.query .textarea {
+  height: 100px;
+}
+
+.query .email {
+  height: 30px;
+}
+
+.query button {
+  height: 30px;
+  color: #e44344;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: medium;
+  font: bold;
+  transition: all 0.3s ease; /* Add transition for smooth animation */
+}
+
+.query button:hover {
+  color: #f70a0a;
+  cursor: pointer;
+  transform: scale(1.01); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.query button span:hover {
+  text-underline-position: below;
+}
+
+.item h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 23px;
+  text-align: center; /* Center align h3 */
+  position: relative; /* Add position relative for underline */
+}
+
+.item h3::after {
+  content: '';
+  display: block;
+  width: 100px; /* Adjust underline width as needed */
+  height: 2px; /* Adjust underline thickness as needed */
+  background-color: #fff; /* Color of underline */
+  position: absolute;
+  bottom: -5px; /* Distance from bottom */
+  left: 50%; /* Center the underline */
+  transform: translateX(-50%); /* Adjust for centering */
+}
+
+.item ul {
+  color: #f0f9ff;
+  padding: 0;
+  list-style: none;
+  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 0;
+  text-align: center; /* Center align text */
+}
+
+.item ul a {
+  color: #f0f9ff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.item ul a:hover {
+  opacity: 0.6;
+}
+
+.item.text p {
+  opacity: 0.6;
+  margin-bottom: 0;
+  text-align: center; /* Center align text */
+}
+
+.item-social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.item-social a {
+  font-size: 18px;
+  color: #f55c5c;
+  background-color: white;
+  border-radius: 13px;
+  padding: 2px 6px;
+  margin: 0px 2px;
+  transition: all 0.3s ease;
+}
+
+.item-social a:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #f1c1c1;
+  font-size: 18px;
+  border-radius: 13px;
+  padding: 1px 7px;
+}
+
+.footer-dark .copyright {
+  text-align: center;
+  padding-top: 24px;
+  opacity: 0.5;
+  font-size: 14px;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text, .links, .finds, .query {
+    flex: 1 1 100%;
+    margin: 10px 0;
+  }
+
+  .query{
+    width: 80%;
+    margin: 10px;
+  }
+  
+}

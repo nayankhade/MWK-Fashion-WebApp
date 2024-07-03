@@ -4,11 +4,11 @@ import axios from 'axios';
 import style from "../../style/Home.css";
 import { Navbar } from './Navbar';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // Import carousel styles
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
 
 export function Home() {
   const [offers, setOffers] = useState([]);
-  const [showJsonButtonGroup, setShowJsonButtonGroup] = useState(false); // State for JSON button group visibility
+  const [showJsonButtonGroup, setShowJsonButtonGroup] = useState(false);
 
 
   useEffect(() => {
@@ -182,6 +182,7 @@ export function Home() {
           </div>
         </div>
       </div>
+      
     </>
   );
 }

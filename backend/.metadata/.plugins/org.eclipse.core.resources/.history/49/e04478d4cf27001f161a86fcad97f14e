@@ -1,9 +1,0 @@
-package com.mwkfashion.mwk_fashion_backend.services;
-
-import com.mwkfashion.mwk_fashion_backend.model.Users;
-
-public interface UsersServices {
-
-	public Users signUp(Users user);
-	
-}
