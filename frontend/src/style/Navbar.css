@@ -1,11 +1,10 @@
 :root {
-    --main-bg-color: #e44344; /* Main background color */
-    --light-color: #f55c5c;   /* Light color */
+    --main-bg-color: #e44344;
+    --light-color: #f55c5c;
 }
 
-/* App.css */
-/* App.css */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   margin: 0;
@@ -13,9 +12,14 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 body {
   background: #f0faff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
 .nav {
   position: fixed;
   top: 0;
@@ -325,9 +329,9 @@ a {
 
 .profile-icon{
   color: white;
-  padding-right: 80px;
   font-size: 20px;
   cursor: pointer;
+  margin-right: 0;
 }
 
 
@@ -414,4 +418,157 @@ a {
 .dropdown a:hover {
   background-color: #f55c5c;
   padding-left: 30px;
+}
+
+.cart {
+  position: relative; /* Ensure positioning context for absolute positioning of badge */
+  left: -10px;
+}
+
+.cart .navbar-right {
+  list-style-type: none; /* Remove default list styling */
+  margin: 0;
+  padding: 0;
+}
+
+.cart .navbar-right li {
+  display: inline-block; /* Display list items horizontally */
+  margin-left: 10px; /* Adjust spacing between items */
+  font-size: 25px;
+}
+
+.cart .navbar-right li a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Text color */
+  padding: 10px; /* Add padding to improve clickability */
+  position: relative; /* Enable positioning for badge */
+}
+
+.cart .navbar-right li a:hover{
+  color: #fc8484;
+}
+
+.cart .navbar-right li a #cart {
+  position: relative;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+
+/* .container {
+  margin: auto;
+  width: 80%;
+} */
+
+.badge {
+  background-color: #e44344;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 7px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  font: 15px;
+}
+
+.shopping-cart {
+  position: absolute;
+  right: 0;
+  top: 55px;
+  background-color: white;
+  border: 1px solid #e44344;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  right: 5px;
+  width: 320px;
+
+}
+
+.shopping-cart .shopping-cart-header {
+  border-bottom: 1px solid #E8E8E8;
+  padding-bottom: 15px;
+}
+
+.shopping-cart .shopping-cart-header .shopping-cart-total {
+  float: right;
+}
+
+.shopping-cart .shopping-cart-items {
+  padding-top: 20px;
+}
+
+.shopping-cart .shopping-cart-items li {
+  margin-bottom: 18px;
+}
+
+.shopping-cart .shopping-cart-items img {
+  float: left;
+  margin-right: 12px;
+}
+
+.shopping-cart .shopping-cart-items .item-name {
+  display: block;
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+.shopping-cart .shopping-cart-items .item-price {
+  color: #e44344;
+  margin-right: 8px;
+}
+
+.shopping-cart .shopping-cart-items .item-quantity {
+  color: black;
+}
+
+.shopping-cart:after {
+  bottom: 100%;
+  left: 89%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: white;
+  border-width: 8px;
+  margin-left: -8px;
+}
+
+.cart-icon {
+  color: #515783;
+  font-size: 24px;
+  margin-right: 7px;
+  float: left;
+}
+
+.button {
+  background: #e44344;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  display: block;
+  border-radius: 3px;
+  font-size: 16px;
+  margin: 25px 0 15px 0;
+}
+
+.button:hover {
+  background: #fff;
+  border: 2px solid #e44344;
+  border-radius: 5px;
+  color: #e44344;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }

@@ -4,7 +4,8 @@ import axios from 'axios';
 import style from "../../style/Home.css";
 import { Navbar } from './Navbar';
 import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; 
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Cards } from './Cards';
 
 export function Home() {
   const [offers, setOffers] = useState([]);
@@ -73,8 +74,8 @@ export function Home() {
     { id: 7, href: "/women/women-pants", src: "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/mobile_dR40w99.jpg?format=webp&w=768&dpr=2.0", alt: "Home Banner" },
     { id: 8, href: "/tags/women-bottomwear", src: "https://prod-img.thesouledstore.com/public/theSoul/storage/mobile-cms-media-prod/banner-images/mobile_banner_copy_IeE1vaE.jpg?format=webp&w=768&dpr=2.0", alt: "Home Banner" }
   ];
-  
-  
+
+
   const toggleJsonButtonGroup = () => {
     setShowJsonButtonGroup(!showJsonButtonGroup);
   };
@@ -85,7 +86,7 @@ export function Home() {
     <>
 
       <div className='dashboard'>
-      <Navbar />
+        <Navbar />
         <Container fluid className='offer-container'>
           <Row>
             <Col>
@@ -111,10 +112,10 @@ export function Home() {
               </Carousel>
             </Col>
           </Row>
-          
+
         </Container>
         <Container fluid className='offer-container offer-cards'>
-        <Row>
+          <Row>
             {offers.map((offer, index) => {
               const imageUrl = `http://localhost:9191/dashboard/images/${offer.offers}`;
               return (
@@ -130,8 +131,11 @@ export function Home() {
             })}
           </Row>
         </Container>
+        <div>
+
+        </div>
         <div className="container-cards">
-          <h1>Clothing Cards made with pure bootstrap and jquery</h1>
+          <h1>Find what you're looking for!</h1>
           <div id="filterButtons">
             <div className="json-search-container">
               <input type="text" id="searchInput" placeholder="Search..." />
@@ -151,6 +155,7 @@ export function Home() {
             </div>
           </div>
 
+
           <br />
           <br />
           <div className="card-row">
@@ -158,7 +163,7 @@ export function Home() {
               <div className="dress-card" key={index}>
                 <div className="dress-card-head">
                   <img className="dress-card-img-top" src={card.img} alt={card.title} />
-                  
+
                 </div>
                 <div className="dress-card-body">
                   <h4 className="dress-card-title">{card.title}</h4>
@@ -181,6 +186,9 @@ export function Home() {
             ))}
           </div>
         </div>
+      </div>
+      <div>
+        <Cards />
       </div>
       
     </>
