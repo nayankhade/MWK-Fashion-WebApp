@@ -1,0 +1,39 @@
+package com.mwkfashion.mwk_fashion_backend.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.mwkfashion.mwk_fashion_backend.model.AdminHandler;
+import com.mwkfashion.mwk_fashion_backend.services.AdminHandlerServiceImpl;
+
+import java.util.List;
+import java.util.Set;
+
+@RestController
+@RequestMapping("/admin")
+@CrossOrigin
+public class AdminHandlerController {
+
+    @Autowired
+    private AdminHandlerServiceImpl adminHandlerServiceImpl;
+
+    @GetMapping("/uniqueCode/{role}")
+    public AdminHandler getUniqueCode(@PathVariable String role) {
+        return adminHandlerServiceImpl.getUniqueCodeByRole(role);
+    }
+
+    @PostMapping("/uniqueCode")
+    public AdminHandler saveOrUpdateUniqueCode(@RequestBody AdminHandler adminHandler) {
+        return adminHandlerServiceImpl.updateUniqueCode(adminHandler);
+    }
+
+    @GetMapping("/allUniqueCodes")
+    public List<AdminHandler> getAllUniqueCodes() {
+        return adminHandlerServiceImpl.getAllUniqueCodes();
+    }
+    
+    @GetMapping("/roles")
+    public Set<String> getRoles() {
+        return adminHandlerServiceImpl.getAllRoles();
+    }
+}

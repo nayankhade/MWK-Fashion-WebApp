@@ -1,0 +1,9 @@
+package com.mwkfashion.mwk_fashion_backend.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.mwkfashion.mwk_fashion_backend.model.AdminHandler;
+import com.mwkfashion.mwk_fashion_backend.enums.Role;
+
+public interface AdminHandlerRepository extends JpaRepository<AdminHandler, Long> {
+    AdminHandler findByRole(Role role);
+}

@@ -132,6 +132,11 @@ a {
     column-gap: 40px;
     list-style: none;
   }
+  .signup-in {
+    top: 60px; /* Adjust top position */
+    right: 10px; /* Adjust right position */
+    padding: 15px; /* Adjust padding */
+  }
 }
 @media screen and (max-width: 1360px) {
   .nav {
@@ -145,6 +150,11 @@ a {
   .nav .nav-links {
     column-gap: 30px;
     list-style: none;
+  }
+  .signup-in {
+    top: 65px; /* Adjust top position */
+    right: 15px; /* Adjust right position */
+    padding: 15px; /* Adjust padding */
   }
 }
 @media screen and (max-width: 1160px) {
@@ -161,6 +171,12 @@ a {
     column-gap: 20px;
     list-style: none;
   }
+  .signup-in {
+    top: 70px; /* Adjust top position */
+    right: 20px; /* Adjust right position */
+    padding: 15px; /* Adjust padding */
+    max-width: 300px; /* Limit width */
+  }
 }
 @media screen and (max-width: 950px) {
   .nav {
@@ -173,6 +189,12 @@ a {
   .nav .nav-links {
     column-gap: 10px;
     list-style: none;
+  }
+  .signup-in {
+    top: 75px; /* Adjust top position */
+    right: 20px; /* Adjust right position */
+    padding: 10px; /* Adjust padding */
+    max-width: 280px; /* Limit width */
   }
 }
 @media screen and (max-width: 1050px) {
@@ -188,6 +210,18 @@ a {
   .nav .nav-links {
     column-gap: 10px;
     list-style: none;
+  }
+  .signup-in {
+    position: fixed; /* Change position to fixed */
+    top: 10px; /* Adjust top position */
+    right: 10px; /* Adjust right position */
+    width: 90%; /* Adjust width */
+    max-width: 350px; /* Limit maximum width */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .signup-in .btn {
+    font-size: 14px; /* Adjust button font-size */
   }
 }
 @media screen and (max-width: 768px) {
@@ -252,6 +286,19 @@ a {
     right: 50%;
     transform: translateX(50%);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .signup-in {
+    top: 10px; /* Adjust top position */
+    right: 5px; /* Adjust right position */
+    width: 90%; /* Adjust width */
+    max-width: 300px; /* Limit maximum width */
+    padding: 8px; /* Adjust padding */
+  }
+
+  .signup-in .btn {
+    font-size: 12px; /* Adjust button font-size */
+    padding: 4px; /* Adjust button padding */
   }
 
   

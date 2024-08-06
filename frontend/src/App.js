@@ -6,6 +6,7 @@ import { SignIn } from './components/beforeLogin/SignIn';
 import { BizSignUp } from './components/biz/BizSignUp';
 import { AuthProvider } from './Js/AuthContext';
 import { Footer } from './components/beforeLogin/Footer';
+import { AdminDashboard } from './components/biz/Admin/AdminDashBoard';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<BizSignUp />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
           </Routes>
         </Router>
       </AuthProvider>
@@ -23,5 +25,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;

@@ -1,0 +1,26 @@
+@Service
+public class AdminHandlerServiceImpl implements AdminHandlerService {
+    @Autowired
+    private AdminHandlerRepository adminHandlerRepository;
+
+    public AdminHandler getUniqueCodeByRole(Role role) {
+        return adminHandlerRepository.findByRole(role.toString());
+    }
+
+    public AdminHandler saveUniqueCode(AdminHandler adminHandler) {
+        return adminHandlerRepository.save(adminHandler);
+    }
+
+    public AdminHandler updateUniqueCode(AdminHandler adminHandler) {
+        return adminHandlerRepository.save(adminHandler);
+    }
+    
+    @Override
+    public Set<String> getAllRoles() {
+        List<AdminHandler> handlers = adminHandlerRepository.findAll();
+        return handlers.stream()
+                       .map(AdminHandler::getRole)
+                       .map(Enum::name)
+                       .collect(Collectors.toSet());
+    }
+}

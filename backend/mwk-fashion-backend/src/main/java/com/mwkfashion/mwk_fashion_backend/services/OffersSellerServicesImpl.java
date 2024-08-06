@@ -22,7 +22,7 @@ public class OffersSellerServicesImpl implements OffersSellerServices {
     private final String uploadDirectory = System.getProperty("user.dir") + "/src/main/webapp/offersimages";
 
     @Override
-    public DashBoardOffers saveOffersData(MultipartFile file) {
+    public DashBoardOffers saveOffersData(String title, MultipartFile file) {
         String orgFileName = file.getOriginalFilename();
         Path fileNameAndPath = Paths.get(uploadDirectory, orgFileName);
 
@@ -34,6 +34,7 @@ public class OffersSellerServicesImpl implements OffersSellerServices {
         }
 
         DashBoardOffers dashBoardOffers = new DashBoardOffers();
+        dashBoardOffers.setTitle(title);
         dashBoardOffers.setOffers(orgFileName);
 
         return offersSellerRepository.save(dashBoardOffers);
@@ -43,6 +44,9 @@ public class OffersSellerServicesImpl implements OffersSellerServices {
     public List<DashBoardOffers> getAllOffers() {
         return offersSellerRepository.findAll();
     }
+
+    @Override
+    public DashBoardOffers findOfferByFilename(String filename) {
+        return offersSellerRepository.findByOffers(filename);
+    }
 }
-
-

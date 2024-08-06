@@ -1,0 +1,68 @@
+package com.mwkfashion.mwk_fashion_backend.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.mwkfashion.mwk_fashion_backend.model.Users;
+import com.mwkfashion.mwk_fashion_backend.repository.UsersRepository;
+import com.mwkfashion.mwk_fashion_backend.model.AdminHandler;
+import com.mwkfashion.mwk_fashion_backend.services.AdminHandlerServiceImpl;
+
+@Service
+public class UsersServicesImpl implements UsersServices {
+
+    private static final Logger log = LoggerFactory.getLogger(UsersServicesImpl.class);
+
+    @Autowired
+    private UsersRepository usersRepository;
+
+    @Autowired
+    private AdminHandlerServiceImpl adminHandlerService;
+
+    @Override
+    public Users signUp(Users user) {
+        log.info("Attempting to sign up user with email: {}", user.getEmail());
+        Users existingUser = usersRepository.findByEmail(user.getEmail());
+        if (existingUser != null) {
+            log.error("Email is already in use: {}", user.getEmail());
+            throw new IllegalArgumentException("Email is already in use");
+        }
+
+        String roleString = user.getRole();
+        String uniqueCode = user.getUniqueCode();
+        log.info("User role: {}", roleString);
+
+        AdminHandler adminHandler = adminHandlerService.getUniqueCodeByRole(roleString);
+        if (roleString.equals("ADMIN") || roleString.equals("MANAGER")) {
+            if (adminHandler == null || !adminHandler.getUniqueCode().equals(uniqueCode)) {
+                log.error("Invalid unique code for role: {}", roleString);
+                throw new IllegalArgumentException("Invalid unique code for " + roleString + " role");
+            }
+        } else if (roleString.equals("USER")) {
+            if (uniqueCode != null && !uniqueCode.isEmpty()) {
+                log.error("Unique code should not be provided for User role");
+                throw new IllegalArgumentException("Unique code should not be provided for User role");
+            }
+        } else {
+            log.error("Invalid role: {}", roleString);
+            throw new IllegalArgumentException("Invalid role");
+        }
+
+        log.info("User signup successful for email: {}", user.getEmail());
+        return usersRepository.save(user);
+    }
+
+    @Override
+    public Users login(String email, String password) {
+        log.info("Attempting to login user with email: {}", email);
+        Users user = usersRepository.findByEmail(email);
+        if (user != null && user.getPassword().equals(password)) {
+            log.info("Login successful for user with email: {}", email);
+            return user;
+        }
+        log.error("Invalid login attempt for email: {}", email);
+        return null;
+    }
+}

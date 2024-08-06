@@ -114,6 +114,8 @@ export function Home() {
           </Row>
 
         </Container>
+
+
         <Container fluid className='offer-container offer-cards'>
           <Row>
             {offers.map((offer, index) => {
@@ -121,16 +123,20 @@ export function Home() {
               return (
                 <Col key={index} xs={12} sm={6} md={4} lg={3}>
                   <Card className="cards my-3">
+                    <div class="seven">
+                      <h1>{offer.title}</h1>
+                    </div>
                     <Card.Img className='offer-img' variant="top" src={imageUrl} alt={`Offer ${index}`} />
-                    <Card.Body>
-                      <Button variant="primary">View Offer</Button>
-                    </Card.Body>
                   </Card>
                 </Col>
               );
             })}
           </Row>
         </Container>
+
+
+
+
         <div>
 
         </div>
@@ -143,7 +149,6 @@ export function Home() {
               <button id="resetButton">Reset</button>
             </div>
             <div className="json-button-group">
-              <button id="dropdownButton" onClick={toggleJsonButtonGroup}>Menu ▼</button>
               <ul id="json-button-group" className={showJsonButtonGroup ? 'show' : 'hide'}>
                 <li className="filter-btn" data-category="all">Item One</li>
                 <li className="filter-btn" data-category="rainbow">Item Two</li>
@@ -190,7 +195,7 @@ export function Home() {
       <div>
         <Cards />
       </div>
-      
+
     </>
   );
 }

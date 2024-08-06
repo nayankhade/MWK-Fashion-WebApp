@@ -33,6 +33,7 @@ export function SignUp() {
           <div className="input-group">
             <input name="password" type="password" placeholder="Enter password here..." />
           </div>
+         
           <button className="signin-btn">Sign up</button>
           <button className="member-btn" onClick={handleLoginClick}>Have a account?</button>
           <div className='aggrement'>

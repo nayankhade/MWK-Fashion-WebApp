@@ -19,6 +19,8 @@ public class DashBoardOffers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    private String title;
 
     private String offers;
 }

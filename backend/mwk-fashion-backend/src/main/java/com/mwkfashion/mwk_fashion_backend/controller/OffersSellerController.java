@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mwkfashion.mwk_fashion_backend.dto.OfferImageDTO;
 import com.mwkfashion.mwk_fashion_backend.model.DashBoardOffers;
 import com.mwkfashion.mwk_fashion_backend.services.OffersSellerServices;
 
@@ -32,8 +33,8 @@ public class OffersSellerController {
     private final Path root = Paths.get("src/main/webapp/offersimages");
 
     @PostMapping("/upload")
-    public DashBoardOffers saveOfferImg(@RequestParam("image") MultipartFile file) {
-        return offersSellerServices.saveOffersData(file);
+    public DashBoardOffers saveOfferImg(@RequestParam("title") String title, @RequestParam("image") MultipartFile file) {
+        return offersSellerServices.saveOffersData(title, file);
     }
 
     @GetMapping
@@ -58,4 +59,5 @@ public class OffersSellerController {
             return ResponseEntity.notFound().build();
         }
     }
+
 }

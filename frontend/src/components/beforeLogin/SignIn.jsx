@@ -19,11 +19,19 @@ export function SignIn() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();     try {
+    e.preventDefault();
+    try {
       const response = await axios.post('http://localhost:9191/login', loginData);
       console.log('Login successful:', response.data);
       login(response.data);
-      navigate('/'); 
+
+      if (response.data.role === 'ADMIN') {
+        navigate('/admin/dashboard');
+      } else if (response.data.role === 'MANAGER') {
+        navigate('/manager/dashboard');
+      } else {
+        navigate('/user/dashboard');
+      }
     } catch (error) {
       console.error('Error logging in:', error);
     }

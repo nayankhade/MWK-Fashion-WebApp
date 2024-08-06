@@ -7,5 +7,6 @@ import com.mwkfashion.mwk_fashion_backend.model.DashBoardOffers;
 
 @Repository
 public interface OffersSellerRepository extends JpaRepository<DashBoardOffers, Integer>{
-
+	 DashBoardOffers findByOffers(String offers);
 }
+

@@ -1,5 +1,8 @@
 package com.mwkfashion.mwk_fashion_backend.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,9 +27,13 @@ public class UsersController {
             Users createdUser = usersServices.signUp(user);
             return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
         } catch (Exception e) {
+            // Log the exception message
+            Logger logger = LoggerFactory.getLogger(UsersController.class);
+            logger.error("Error during signup: ", e);
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
     @PostMapping("/login")
     public ResponseEntity<Users> login(@RequestBody Users loginRequest) {
